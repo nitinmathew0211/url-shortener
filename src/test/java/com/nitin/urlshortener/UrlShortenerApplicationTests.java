@@ -9,5 +9,5 @@ class UrlShortenerApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
+	//Tests should have been written.
 }

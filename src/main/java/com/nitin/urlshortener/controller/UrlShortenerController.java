@@ -43,6 +43,8 @@ public class UrlShortenerController {
       URI uri = new URI(originalUrl);
       return ResponseEntity.status(302).location(uri).body(objectMapper.writeValueAsString(Boolean.TRUE));
     } catch (Exception e) {
+      //Read about ResponseEntityExceptionHandler for handling exceptions. Using these you wouldn't have to handle
+      //them on the controller level and would make the code cleaner.
       log.error("Error while invoking API for redirection with key {} {}", key, e.getMessage(), e);
       return ResponseEntity.status(404).body(objectMapper.writeValueAsString(e.getMessage()));
     }

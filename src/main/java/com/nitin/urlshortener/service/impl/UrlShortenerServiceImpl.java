@@ -54,6 +54,8 @@ public class UrlShortenerServiceImpl implements UrlShortenerService {
       throw new Exception("Custom key already taken");
     }
 
+    // Why is util holding the responsibility to build the model?
+    //Could have built the url here itself.
     urlRepository.save(CommonUtil.getUrl(customKey, originalUrl));
 
     return customKey;
